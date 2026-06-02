@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Del Sol Piscinas y Accesorios | Posadas, Misiones</title>
+<meta name="description" content="Del Sol Piscinas y Accesorios en Posadas, Misiones. Venta, instalacion y mantenimiento de piscinas. Contactanos por WhatsApp, Instagram o Facebook.">
+<link rel="icon" type="image/jpeg" href="img/delsol_logo_turquesa.jpeg">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Del Sol Piscinas y Accesorios",
+  "description": "Venta, instalacion y mantenimiento de piscinas en Posadas, Misiones",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Posadas",
+    "addressRegion": "Misiones",
+    "addressCountry": "AR"
+  },
+  "url": "https://delsolpiscinas.com.ar"
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --mint:#00E5B4;--mint-dark:#00C49A;--mint-pale:#E0FBF5;
+  --dark:#0B1A17;--dark-2:#122820;--text:#0F2318;--muted:#4A6B5E;--white:#FAFFFE;
+  --font-display:"Cormorant Garamond",Georgia,serif;
+  --font-body:"Outfit",sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--white);color:var(--text);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.7rem 3rem;background:rgba(11,26,23,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,229,180,.1)}
+.nav-logo img{height:48px;width:48px;border-radius:50%;object-fit:cover;display:block}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center}
+.nav-links a{text-decoration:none;color:rgba(255,255,255,.6);font-size:.82rem;font-weight:400;letter-spacing:.07em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--mint)}
+.nav-cta{padding:.5rem 1.4rem!important;background:var(--mint);color:var(--dark)!important;border-radius:2px;font-weight:600!important}
+.nav-cta:hover{background:var(--mint-dark)!important;color:var(--dark)!important}
+
+/* HERO - dos columnas */
+.hero{min-height:78vh;background:var(--dark);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:6rem 3rem 3rem;gap:3rem;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 100% 50%,rgba(0,229,180,.07) 0%,transparent 60%),radial-gradient(ellipse 40% 60% at 0% 100%,rgba(0,229,180,.04) 0%,transparent 50%);pointer-events:none}
+.hero-left{position:relative;z-index:1}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--mint);margin-bottom:1.5rem}
+.hero-eyebrow::before{content:"";display:block;width:24px;height:1px;background:var(--mint)}
+.hero h1{font-family:var(--font-display);font-size:clamp(3rem,5vw,4.8rem);font-weight:700;color:#fff;line-height:1.08;margin-bottom:1.5rem}
+.hero h1 em{font-style:italic;color:var(--mint)}
+.hero-desc{font-size:1rem;color:rgba(255,255,255,.5);line-height:1.8;max-width:420px;margin-bottom:2.5rem;font-weight:300}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-right{position:relative;z-index:1;display:flex;align-items:center;justify-content:center}
+.hero-logo-wrap{width:340px;height:340px;border-radius:50%;overflow:hidden;border:2px solid rgba(0,229,180,.25);box-shadow:0 0 80px rgba(0,229,180,.12)}
+.hero-logo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+
+/* BUTTONS */
+.btn-primary{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 2rem;background:var(--mint);color:var(--dark);font-family:var(--font-body);font-size:.85rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;text-decoration:none;transition:background .2s,transform .15s}
+.btn-primary:hover{background:var(--mint-dark);transform:translateY(-1px)}
+.btn-ghost{display:inline-flex;align-items:center;padding:.9rem 2rem;background:transparent;color:rgba(255,255,255,.6);font-family:var(--font-body);font-size:.85rem;font-weight:400;letter-spacing:.05em;text-transform:uppercase;border:1px solid rgba(255,255,255,.18);border-radius:2px;text-decoration:none;transition:border-color .2s,color .2s}
+.btn-ghost:hover{border-color:var(--mint);color:var(--mint)}
+
+/* STRIP */
+.strip{background:var(--mint);padding:1rem 3rem;display:flex;gap:3rem;align-items:center;justify-content:center;flex-wrap:wrap}
+.strip-item{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dark);display:flex;align-items:center;gap:.5rem}
+.strip-item::before{content:"✦";font-size:.55rem}
+
+/* GALERÍA - slider independiente */
+.galeria{position:relative;height:620px;overflow:hidden}
+
+.svc-slides{position:absolute;inset:0;z-index:0}
+.svc-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;background-size:cover;background-position:center}
+.svc-slide.active{opacity:1}
+
+/* Flechas slider */
+.svc-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.25);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.2rem;transition:background .2s;backdrop-filter:blur(4px)}
+.svc-arrow:hover{background:rgba(0,229,180,.5)}
+.svc-arrow.prev{left:1.2rem}
+.svc-arrow.next{right:1.2rem}
+
+/* Puntos slider */
+.svc-dots{position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;gap:.5rem}
+.svc-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.35);cursor:pointer;transition:background .2s,transform .2s}
+.svc-dot.active{background:var(--mint);transform:scale(1.3)}
+
+/* SERVICIOS */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.07);border-radius:4px;overflow:hidden}
+.service-card{background:var(--white);padding:2.5rem 2rem;transition:background .25s}
+.service-card:hover{background:var(--mint-pale)}
+.service-num{font-family:var(--font-display);font-size:3rem;font-weight:700;color:rgba(0,196,154,.18);line-height:1;margin-bottom:1rem}
+.service-card h3{font-family:var(--font-display);font-size:1.35rem;font-weight:700;color:var(--text);margin-bottom:.75rem}
+.service-card p{font-size:.88rem;color:var(--muted);line-height:1.7;font-weight:300}
+
+/* SECTIONS genéricas */
+.section{padding:6rem 3rem}
+.section-eyebrow{font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--mint-dark);margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+.section-eyebrow::before{content:"";display:block;width:20px;height:1px;background:var(--mint-dark)}
+.section-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;color:var(--text);line-height:1.1}
+.section-sub{font-size:1rem;color:var(--muted);max-width:480px;line-height:1.75;margin-top:1rem;font-weight:300}
+.section-header{margin-bottom:3.5rem}
+
+/* NOSOTROS */
+.about{background:var(--dark-2);padding:6rem 3rem}
+.about-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:center}
+.about .section-eyebrow{color:var(--mint)}
+.about .section-eyebrow::before{background:var(--mint)}
+.about .section-title{color:#fff}
+.about .section-sub{color:rgba(255,255,255,.45)}
+.stats-col{display:flex;flex-direction:column;gap:1px}
+.stat-row{background:rgba(255,255,255,.04);border:1px solid rgba(0,229,180,.1);padding:1.5rem 2rem;display:flex;align-items:baseline;gap:1rem;transition:background .2s}
+.stat-row:hover{background:rgba(0,229,180,.06)}
+.stat-num{font-family:var(--font-display);font-size:2.8rem;font-weight:700;color:var(--mint);line-height:1;min-width:90px}
+.stat-label{font-size:.85rem;color:rgba(255,255,255,.45);font-weight:300;line-height:1.4}
+
+/* BLOG */
+.blog{background:#F2FBF8;padding:6rem 3rem}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.blog-card{background:#fff;border-radius:2px;border:1px solid rgba(0,0,0,.06);overflow:hidden;transition:transform .25s,box-shadow .25s}
+.blog-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,100,70,.1)}
+.blog-thumb{height:160px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0B3D2E 0%,#00C49A 100%);font-size:3rem}
+.blog-body{padding:1.5rem}
+.blog-tag{font-size:.68rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--mint-dark);margin-bottom:.6rem}
+.blog-body h3{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--text);line-height:1.3;margin-bottom:.6rem}
+.blog-body p{font-size:.83rem;color:var(--muted);line-height:1.65;font-weight:300}
+.blog-read{display:inline-flex;align-items:center;gap:.35rem;margin-top:1rem;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mint-dark);text-decoration:none;cursor:pointer;background:none;border:none;font-family:var(--font-body)}
+.blog-extra{display:none;font-size:.83rem;color:var(--muted);line-height:1.7;font-weight:300;margin-top:.6rem}
+.blog-card.expanded .blog-extra{display:block}
+.blog-card.expanded .blog-read .arrow{transform:rotate(90deg);display:inline-block;transition:transform .2s}
+
+/* CONTACTO */
+.contacto{background:var(--dark);padding:6rem 3rem;text-align:center}
+.contacto .section-eyebrow{justify-content:center;color:var(--mint)}
+.contacto .section-eyebrow::before{background:var(--mint)}
+.contacto .section-title{color:#fff}
+.contacto .section-sub{color:rgba(255,255,255,.4);margin:1rem auto 0}
+.social-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:3rem}
+.social-btn{display:inline-flex;align-items:center;gap:.7rem;padding:1rem 2.2rem;border-radius:2px;font-family:var(--font-body);font-size:.85rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;transition:transform .2s,filter .2s}
+.social-btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.social-btn.ig{background:linear-gradient(135deg,#E1306C,#833AB4);color:#fff}
+.social-btn.fb{background:#1877F2;color:#fff}
+.social-btn.wa{background:#25D366;color:#fff}
+
+.maps-wrap{margin-top:3rem;display:flex;flex-direction:column;align-items:center;gap:1.2rem}
+.btn-review{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;background:#fff;color:#333;border-radius:2px;font-family:var(--font-body);font-size:.85rem;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.btn-review:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+
+/* FOOTER */
+footer{background:#060F0C;padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-logo img{height:40px;width:40px;border-radius:50%;object-fit:cover;opacity:.7}
+footer p{font-size:.78rem;color:rgba(255,255,255,.22);font-weight:300}
+footer strong{color:var(--mint);font-weight:500}
+
+/* WHATSAPP FLOTANTE */
+.wa-float{position:fixed;bottom:2rem;right:2rem;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 4px 24px rgba(37,211,102,.4);cursor:pointer;text-decoration:none;z-index:200;transition:transform .2s}
+.wa-float:hover{transform:scale(1.1)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{padding:.7rem 1.2rem}
+  .nav-links{gap:1.2rem}
+  .hero{grid-template-columns:1fr;padding:6rem 1.2rem 3rem;gap:2rem}
+  .hero-right{display:none}
+  .strip{padding:.8rem 1.2rem;gap:1.2rem}
+  .servicios{padding:4rem 1.2rem}
+  .svc-arrow{display:none}
+  .section{padding:4rem 1.2rem}
+  .about{padding:4rem 1.2rem}
+  .about-inner{grid-template-columns:1fr;gap:3rem}
+  .blog{padding:4rem 1.2rem}
+  .contacto{padding:4rem 1.2rem}
+  footer{padding:1.5rem 1.2rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#inicio" class="nav-logo">
+    <img src="img/delsol_logo_turquesa.jpeg" alt="Del Sol Piscinas y Accesorios">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- HERO - dos columnas -->
+<section class="hero" id="inicio">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Posadas, Misiones</div>
+    <h1>Tu piscina perfecta<br><em>hecha realidad</em></h1>
+    <p class="hero-desc">Venta, instalación y mantenimiento de piscinas en Posadas. Más de 10 años transformando espacios en Misiones.</p>
+    <div class="hero-ctas">
+      <a href="#contacto" class="btn-primary">Consultanos ahora</a>
+      <a href="#servicios" class="btn-ghost">Ver servicios</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-logo-wrap">
+      <img src="img/delsol_logo_playa.jpeg" alt="Del Sol Piscinas">
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <span class="strip-item">Venta de piscinas</span>
+  <span class="strip-item">Instalación profesional</span>
+  <span class="strip-item">Mantenimiento</span>
+  <span class="strip-item">Accesorios y repuestos</span>
+  <span class="strip-item">Posadas · Misiones</span>
+</div>
+
+<!-- SLIDER - sección propia -->
+<section class="galeria">
+  <div class="svc-slides">
+    <div class="svc-slide active" style="background-image:url('img/delsol_slide1.jpeg');background-position:center 40%"></div>
+    <div class="svc-slide" style="background-image:url('img/slide2.jpg');background-position:center 25%"></div>
+    <div class="svc-slide" style="background-image:url('img/slide1.jpg');background-position:center 20%"></div>
+    <div class="svc-slide" style="background-image:url('img/delsol_slide2.jpeg');background-position:center 15%"></div>
+  </div>
+  <button class="svc-arrow prev" aria-label="Anterior">&#8249;</button>
+  <button class="svc-arrow next" aria-label="Siguiente">&#8250;</button>
+  <div class="svc-dots">
+    <div class="svc-dot active"></div>
+    <div class="svc-dot"></div>
+    <div class="svc-dot"></div>
+    <div class="svc-dot"></div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="section" id="servicios">
+  <div class="section-header">
+    <p class="section-eyebrow">Lo que hacemos</p>
+    <h2 class="section-title">Nuestros servicios</h2>
+    <p class="section-sub">Todo lo que necesitás para tu piscina, desde la compra hasta el mantenimiento anual.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <h3>Venta de piscinas</h3>
+      <p>Amplio catálogo de piscinas prefabricadas y a medida. Modelos para cada espacio y presupuesto.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <h3>Instalación</h3>
+      <p>Instalación profesional con equipos propios. Trabajamos en toda la provincia de Misiones.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <h3>Mantenimiento</h3>
+      <p>Servicio periódico de limpieza, control de pH y cloración para mantener el agua perfecta todo el año.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <h3>Reparaciones</h3>
+      <p>Diagnóstico y reparación de bombas, filtros, losetas y estructuras. Respondemos rápido.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section class="about" id="nosotros">
+  <div class="about-inner">
+    <div>
+      <p class="section-eyebrow">Quiénes somos</p>
+      <h2 class="section-title">Más de una década<br>en el agua</h2>
+      <p class="section-sub">Del Sol Piscinas y Accesorios nació en Posadas con una sola misión: que cada familia misionera pueda disfrutar de su propia piscina con la tranquilidad de que todo salió perfecto.</p>
+    </div>
+    <div class="stats-col">
+      <div class="stat-row">
+        <span class="stat-num">+10</span>
+        <span class="stat-label">Años de experiencia en el rubro</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-num">+200</span>
+        <span class="stat-label">Piscinas instaladas en Misiones</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Garantía en instalación y materiales</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog" id="blog">
+  <div class="section-header">
+    <p class="section-eyebrow">Consejos y novedades</p>
+    <h2 class="section-title">Blog</h2>
+    <p class="section-sub">Tips de mantenimiento, novedades del rubro y todo lo que necesitás saber sobre piscinas.</p>
+  </div>
+  <div class="blog-grid">
+    <div class="blog-card">
+      <div class="blog-thumb">💧</div>
+      <div class="blog-body">
+        <p class="blog-tag">Mantenimiento</p>
+        <h3>Cómo mantener el agua cristalina en verano</h3>
+        <p>El calor misionero exige más atención al pH y la cloración. Estos son nuestros consejos clave para esta temporada.</p>
+        <div class="blog-extra">
+          <p>Controlá el pH dos veces por semana: el rango ideal es entre 7,2 y 7,6. Si el pH está alto el cloro pierde efectividad; si está bajo irrita la piel y los ojos.</p>
+          <p style="margin-top:.6rem">En días de mucho calor y con mucha gente usando la piscina, duplicá la dosis de cloro. Revisá el filtro cada 48 horas y hacé un lavado a contracorriente si la presión sube más de lo normal.</p>
+        </div>
+        <button class="blog-read">Leer más <span class="arrow">→</span></button>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-thumb">🏗️</div>
+      <div class="blog-body">
+        <p class="blog-tag">Instalación</p>
+        <h3>¿Cuál es el mejor momento para instalar una piscina?</h3>
+        <p>Primavera y otoño son las estaciones ideales. Te explicamos por qué y cómo planificar tu proyecto.</p>
+        <div class="blog-extra">
+          <p>En primavera el suelo está en condiciones óptimas y la obra no interfiere con el verano. En otoño terminás la instalación y tenés toda la temporada siguiente para disfrutarla desde el primer día.</p>
+          <p style="margin-top:.6rem">Evitá instalar en pleno verano (el calor extremo dificulta los materiales) o en invierno (suelo más duro). Contactanos con al menos 30 días de anticipación para coordinar los tiempos.</p>
+        </div>
+        <button class="blog-read">Leer más <span class="arrow">→</span></button>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-thumb">✅</div>
+      <div class="blog-body">
+        <p class="blog-tag">Consejos</p>
+        <h3>5 cosas que tenés que saber antes de comprar una piscina</h3>
+        <p>Espacio disponible, tipo de suelo, presupuesto total y más. Leé esto antes de decidirte.</p>
+        <div class="blog-extra">
+          <p><strong>1. Medí el espacio</strong> — dejá al menos 1 metro libre alrededor para circular y hacer mantenimiento.</p>
+          <p style="margin-top:.5rem"><strong>2. Revisá el suelo</strong> — mucha pendiente o rellenos pueden encarecer la obra.</p>
+          <p style="margin-top:.5rem"><strong>3. Calculá el presupuesto total</strong> — incluí instalación, accesorios (bomba, filtro, escalera) y mantenimiento anual.</p>
+          <p style="margin-top:.5rem"><strong>4. Pensá en el tamaño real</strong> — más grande no siempre es mejor si el mantenimiento después es difícil de sostener.</p>
+          <p style="margin-top:.5rem"><strong>5. Elegí experiencia local</strong> — el clima de Misiones tiene sus particularidades. Llevamos más de 10 años trabajando en la zona.</p>
+        </div>
+        <button class="blog-read">Leer más <span class="arrow">→</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <p class="section-eyebrow">Hablemos</p>
+  <h2 class="section-title">Contactanos</h2>
+  <p class="section-sub">Estamos en Posadas, Misiones. Escribinos por cualquiera de nuestras redes y te respondemos enseguida.</p>
+  <div class="social-row">
+    <a href="https://instagram.com/piscinas_del_sol_" target="_blank" class="social-btn ig">&#128247; Instagram</a>
+    <a href="https://www.facebook.com/share/1EgpWAriqE/?mibextid=wwXlfr" target="_blank" class="social-btn fb">&#128100; Facebook</a>
+    <a href="https://wa.me/5493764615785" target="_blank" class="social-btn wa">&#128172; WhatsApp</a>
+  </div>
+
+  <div class="maps-wrap">
+    <iframe
+      src="https://maps.google.com/maps?q=Santiago+del+Estero+2406+Posadas+Misiones+Argentina&output=embed&z=16"
+      width="100%" height="320" style="border:0;border-radius:4px;opacity:.85" allowfullscreen loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade" title="Ubicación Del Sol Piscinas">
+    </iframe>
+    <a href="https://maps.google.com/?q=Santiago+del+Estero+2406,+Posadas,+Misiones,+Argentina" target="_blank" class="btn-review">
+      📍 Ver ubicación en Google Maps
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">
+    <img src="img/delsol_logo_turquesa.jpeg" alt="Del Sol Piscinas">
+  </div>
+  <p>&copy; 2026 <strong>Del Sol Piscinas y Accesorios</strong> &mdash; Posadas, Misiones</p>
+</footer>
+
+<a href="https://wa.me/5493764615785" target="_blank" class="wa-float" title="WhatsApp">&#128172;</a>
+
+<script>
+  // Slider servicios
+  const slides = document.querySelectorAll('.svc-slide');
+  const dots = document.querySelectorAll('.svc-dot');
+  let current = 0;
+  let timer;
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function startAuto() { timer = setInterval(() => goTo(current + 1), 5000); }
+  function resetAuto() { clearInterval(timer); startAuto(); }
+
+  document.querySelector('.svc-arrow.next').addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+  document.querySelector('.svc-arrow.prev').addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+  dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); resetAuto(); }));
+  startAuto();
+
+  // Blog expand/collapse
+  document.querySelectorAll('.blog-read').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.blog-card');
+      const expanded = card.classList.toggle('expanded');
+      btn.innerHTML = expanded ? 'Leer menos <span class="arrow">↑</span>' : 'Leer más <span class="arrow">→</span>';
+    });
+  });
+
+  // Nav scroll
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.background = window.scrollY > 50 ? 'rgba(11,26,23,1)' : 'rgba(11,26,23,.96)';
+  });
+</script>
+</body>
+</html>
