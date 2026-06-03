@@ -10,7 +10,9 @@ body{font-family:var(--font-body);background:var(--white);color:var(--text);over
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.7rem 3rem;background:rgba(11,26,23,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,229,180,.1)}
-.nav-logo img{height:48px;width:48px;border-radius:50%;object-fit:cover;display:block}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+.nav-logo img{height:48px;width:48px;border-radius:50%;object-fit:cover;display:block;flex-shrink:0}
+.nav-nombre{color:#fff;font-family:var(--font-display);font-size:1.3rem;font-weight:600;letter-spacing:.02em}
 .nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center}
 .nav-links a{text-decoration:none;color:rgba(255,255,255,.6);font-size:.82rem;font-weight:400;letter-spacing:.07em;text-transform:uppercase;transition:color .2s}
 .nav-links a:hover{color:var(--mint)}

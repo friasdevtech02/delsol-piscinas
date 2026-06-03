@@ -29,6 +29,7 @@
 <nav>
   <a href="#inicio" class="nav-logo">
     <img src="img/delsol_logo_turquesa.jpeg" alt="Del Sol Piscinas y Accesorios">
+    <span class="nav-nombre">Del Sol</span>
   </a>
   <ul class="nav-links">
     <li><a href="#servicios">Servicios</a></li>
@@ -50,7 +51,7 @@
   <div class="mobile-social">
     <a href="https://instagram.com/piscinas_del_sol_" target="_blank" class="m-ig">&#128247;</a>
     <a href="https://www.facebook.com/share/1EgpWAriqE/?mibextid=wwXlfr" target="_blank" class="m-fb">&#128100;</a>
-    <a href="https://wa.me/5493764615785" target="_blank" class="m-wa">&#128172;</a>
+    <a href="https://wa.me/543765385003" target="_blank" class="m-wa">&#128172;</a>
   </div>
 </div>
 
@@ -215,19 +216,19 @@
   <div class="social-row">
     <a href="https://instagram.com/piscinas_del_sol_" target="_blank" class="social-btn ig">&#128247; Instagram</a>
     <a href="https://www.facebook.com/share/1EgpWAriqE/?mibextid=wwXlfr" target="_blank" class="social-btn fb">&#128100; Facebook</a>
-    <a href="https://wa.me/5493764615785" target="_blank" class="social-btn wa">&#128172; WhatsApp</a>
+    <a href="https://wa.me/543765385003" target="_blank" class="social-btn wa">&#128172; WhatsApp</a>
   </div>
 
-  <div class="maps-wrap">
-    <iframe
-      src="https://maps.google.com/maps?q=Santiago+del+Estero+2406+Posadas+Misiones+Argentina&output=embed&z=16"
-      width="100%" height="320" style="border:0;border-radius:4px;opacity:.85" allowfullscreen loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade" title="Ubicación Del Sol Piscinas">
-    </iframe>
-    <a href="https://maps.google.com/?q=Santiago+del+Estero+2406,+Posadas,+Misiones,+Argentina" target="_blank" class="btn-review">
-      📍 Ver ubicación en Google Maps
-    </a>
-  </div>
+<div class="maps-wrap">
+  <iframe
+    src="https://maps.google.com/maps?q=Del+Sol+Piscinas+y+Accesorios,+Santiago+del+Estero+2406,+Posadas,+Misiones,+Argentina&output=embed&z=16"
+    width="100%" height="320" style="border:0;border-radius:4px;opacity:.85" allowfullscreen loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade" title="Ubicación Del Sol Piscinas">
+  </iframe>
+  <a href="https://maps.google.com/?q=Del+Sol+Piscinas+y+Accesorios,+Santiago+del+Estero+2406,+Posadas,+Misiones,+Argentina" target="_blank" class="btn-review">
+    &#128205; Ver ubicación en Google Maps
+  </a>
+</div>
 </section>
 
 <footer>
@@ -237,46 +238,7 @@
   <p>&copy; 2026 <strong>Del Sol Piscinas y Accesorios</strong> &mdash; Posadas, Misiones</p>
 </footer>
 
-<a href="https://wa.me/5493764615785" target="_blank" class="wa-float" title="WhatsApp">&#128172;</a>
-
-<script>
-  // Slider servicios
-  const slides = document.querySelectorAll('.svc-slide');
-  const dots = document.querySelectorAll('.svc-dot');
-  let current = 0;
-  let timer;
-
-  function goTo(n) {
-    slides[current].classList.remove('active');
-    dots[current].classList.remove('active');
-    current = (n + slides.length) % slides.length;
-    slides[current].classList.add('active');
-    dots[current].classList.add('active');
-  }
-
-  function startAuto() { timer = setInterval(() => goTo(current + 1), 5000); }
-  function resetAuto() { clearInterval(timer); startAuto(); }
-
-  document.querySelector('.svc-arrow.next').addEventListener('click', () => { goTo(current + 1); resetAuto(); });
-  document.querySelector('.svc-arrow.prev').addEventListener('click', () => { goTo(current - 1); resetAuto(); });
-  dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); resetAuto(); }));
-  startAuto();
-
-  // Blog expand/collapse
-  document.querySelectorAll('.blog-read').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const card = btn.closest('.blog-card');
-      const expanded = card.classList.toggle('expanded');
-      btn.innerHTML = expanded ? 'Leer menos <span class="arrow">↑</span>' : 'Leer más <span class="arrow">→</span>';
-    });
-  });
-
-  // Nav scroll
-  const nav = document.querySelector('nav');
-  window.addEventListener('scroll', () => {
-    nav.style.background = window.scrollY > 50 ? 'rgba(11,26,23,1)' : 'rgba(11,26,23,.96)';
-  });
-</script>
+<a href="https://wa.me/543765385003" target="_blank" class="wa-float" title="WhatsApp">&#128172;</a>
 
 <script src="js/main.js"></script>
 </body>
