@@ -200,5 +200,6 @@ footer strong{color:var(--mint);font-weight:500}
   .social-btn{width:100%;max-width:280px;justify-content:center}
   .maps-wrap iframe{height:240px}
 
+  .blog-thumb-img { padding: 0; overflow: hidden; }
   footer{padding:1.5rem 1.2rem;flex-direction:column;text-align:center}
 }
