@@ -1,0 +1,120 @@
+/* ARTÍCULOS DEL BLOG */
+.articulo-wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 7rem 2rem 5rem;
+}
+
+.breadcrumb {
+  font-size: .75rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  flex-wrap: wrap;
+}
+.breadcrumb a {
+  color: var(--mint-dark);
+  text-decoration: none;
+}
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb span { color: var(--muted); }
+
+.articulo-header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+.articulo-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.15;
+  margin: .75rem 0 1rem;
+}
+
+.articulo-intro {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.articulo-body {
+  font-size: .95rem;
+  color: var(--text);
+  line-height: 1.85;
+}
+
+.articulo-body h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 2.5rem 0 .75rem;
+}
+
+.articulo-body p {
+  margin-bottom: 1rem;
+  color: #2a4a3a;
+  font-weight: 300;
+}
+
+.articulo-body ul {
+  margin: .5rem 0 1.2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+.articulo-body ul li {
+  color: #2a4a3a;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.articulo-body strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.articulo-cta {
+  margin-top: 3rem;
+  background: var(--mint-pale);
+  border-left: 3px solid var(--mint);
+  border-radius: 2px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.articulo-cta p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  margin: 0;
+}
+
+/* Links dentro del blog-card en index */
+.blog-card h3 a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color .2s;
+}
+.blog-card h3 a:hover {
+  color: var(--mint-dark);
+}
+
+@media(max-width: 768px) {
+  .articulo-wrap {
+    padding: 5.5rem 1.2rem 3rem;
+  }
+  .articulo-cta {
+    padding: 1.5rem;
+  }
+}
