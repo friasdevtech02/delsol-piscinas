@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog sobre piscinas en Posadas Misiones | Del Sol Piscinas</title>
+<meta name="description" content="Consejos de mantenimiento, instalación y todo lo que necesitás saber sobre piscinas en Posadas, Misiones. Blog de Del Sol Piscinas y Accesorios.">
+<link rel="canonical" href="https://delsolpiscinas.com.ar/blog/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog | Del Sol Piscinas Posadas">
+<meta property="og:description" content="Consejos de mantenimiento, instalación y todo lo que necesitás saber sobre piscinas en Posadas, Misiones.">
+<meta property="og:image" content="https://delsolpiscinas.com.ar/img/delsol_logo_playa.jpeg">
+<link rel="icon" type="image/jpeg" href="../img/delsol_logo_turquesa.jpeg">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/blog.css">
+<style>
+  .blog-index-wrap { max-width: 1000px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+  .blog-index-wrap .section-header { margin-bottom: 3rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-logo">
+    <img src="../img/delsol_logo_turquesa.jpeg" alt="Del Sol Piscinas y Accesorios">
+    <span class="nav-nombre">Del Sol</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html#servicios">Servicios</a></li>
+    <li><a href="../index.html#nosotros">Nosotros</a></li>
+    <li><a href="../index.html#blog">Blog</a></li>
+    <li><a href="../index.html#contacto" class="nav-cta">Contacto</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html#servicios" class="menu-link">Servicios</a>
+  <a href="../index.html#nosotros" class="menu-link">Nosotros</a>
+  <a href="../index.html#blog" class="menu-link">Blog</a>
+  <a href="../index.html#contacto" class="nav-cta menu-link">Contacto</a>
+</div>
+
+<div class="blog-index-wrap">
+  <div class="section-header">
+    <p class="section-eyebrow">Consejos y novedades</p>
+    <h1 class="section-title">Blog</h1>
+    <p class="section-sub">Todo lo que necesitás saber sobre piscinas en Posadas, Misiones.</p>
+  </div>
+  <div class="blog-grid" id="blog-grid">
+    <div class="blog-loading">Cargando artículos...</div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <img src="../img/delsol_logo_turquesa.jpeg" alt="Del Sol Piscinas Posadas">
+  </div>
+  <p>&copy; 2026 <strong>Del Sol Piscinas y Accesorios</strong> &mdash; Posadas, Misiones</p>
+</footer>
+
+<a href="https://wa.me/543765385003" target="_blank" class="wa-float" title="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.859L.057 23.428a.75.75 0 0 0 .915.915l5.569-1.475A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.703-.528-5.238-1.448l-.374-.223-3.308.876.876-3.308-.223-.374A9.953 9.953 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+const tagEmoji = {
+  'Mantenimiento': '💧',
+  'Instalación': '🏗️',
+  'Consejos': '✅',
+  'Novedades': '🌟',
+};
+
+function renderCard(post) {
+  const thumb = post.image
+    ? `<div class="blog-thumb blog-thumb-img">
+         <img src="${post.image}" alt="${post.title}" style="width:100%;height:100%;object-fit:cover;display:block;">
+       </div>`
+    : `<div class="blog-thumb">${post.emoji || tagEmoji[post.tag] || '📝'}</div>`;
+
+  return `
+    <article class="blog-card">
+      ${thumb}
+      <div class="blog-body">
+        <p class="blog-tag">${post.tag}</p>
+        <h2><a href="${post.slug}.html">${post.title}</a></h2>
+        <p>${marked.parse(post.excerpt)}</p>
+        <a href="${post.slug}.html" class="blog-read">Leer más <span class="arrow">→</span></a>
+      </div>
+    </article>
+  `;
+}
+
+async function loadPosts() {
+  const grid = document.getElementById('blog-grid');
+  try {
+    const res = await fetch('../_posts/index.json');
+    if (!res.ok) throw new Error('sin posts');
+    const posts = await res.json();
+    if (!posts.length) {
+      grid.innerHTML = '<p style="color:var(--muted)">Próximamente nuevos artículos.</p>';
+      return;
+    }
+    // Muestra TODOS los artículos
+    grid.innerHTML = posts.map(renderCard).join('');
+  } catch (e) {
+    grid.innerHTML = '<p style="color:var(--muted)">No se pudieron cargar los artículos.</p>';
+  }
+}
+
+loadPosts();
+</script>
+<script src="../js/main.js"></script>
+</body>
+</html>
