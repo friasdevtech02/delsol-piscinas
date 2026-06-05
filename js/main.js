@@ -1,3 +1,5 @@
+window.addEventListener('load', function() {
+
 // Slider servicios
 const slides = document.querySelectorAll('.svc-slide');
 const dots = document.querySelectorAll('.svc-dot');
@@ -64,3 +66,4 @@ if (hamburger && mobileMenu) {
     });
   });
 }
+});
