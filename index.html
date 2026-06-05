@@ -245,6 +245,42 @@
   </div>
 </section>
 
+</div>
+</section>
+
+<script>
+(function() {
+  var slides = document.querySelectorAll('.svc-slide');
+  var dots = document.querySelectorAll('.svc-dot');
+  var current = 0;
+  var timer;
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function startAuto() { timer = setInterval(function() { goTo(current + 1); }, 5000); }
+  function resetAuto() { clearInterval(timer); startAuto(); }
+
+  document.querySelector('.svc-arrow.next').addEventListener('click', function() { goTo(current + 1); resetAuto(); });
+  document.querySelector('.svc-arrow.prev').addEventListener('click', function() { goTo(current - 1); resetAuto(); });
+  dots.forEach(function(dot, i) { dot.addEventListener('click', function() { goTo(i); resetAuto(); }); });
+  startAuto();
+
+  var sliderEl = document.querySelector('.svc-slides');
+  var touchStartX = 0;
+  sliderEl.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+  sliderEl.addEventListener('touchend', function(e) {
+    var diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) { diff > 0 ? goTo(current + 1) : goTo(current - 1); resetAuto(); }
+  }, { passive: true });
+})();
+</script>
+
 <!-- SERVICIOS -->
 <section class="section" id="servicios">
   <div class="section-header">
