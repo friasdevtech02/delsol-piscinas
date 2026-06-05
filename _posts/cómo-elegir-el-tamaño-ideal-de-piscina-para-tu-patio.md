@@ -2,9 +2,9 @@
 title: Cómo elegir el tamaño ideal de piscina para tu patio
 date: 2026-06-04
 tag: Consejos
-emoji: "🏊"
+emoji: 🏊
 excerpt: El tamaño de tu piscina depende del espacio disponible, la cantidad de
-  personas y el presupuesto. Te ayudamos a elegir bien desde el principio.
+  personas y el presupuesto. Te ayudamos a elegir bien desde el principio
 ---
 Elegir el tamaño correcto de piscina es una de las decisiones más importantes antes de empezar la obra. Un error en esta etapa puede costar caro después.
 
