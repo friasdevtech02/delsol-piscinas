@@ -1,28 +1,73 @@
-<!DOCTYPE html>
+const fs = require('fs');
+const path = require('path');
+
+const postsDir = './_posts';
+const outputDir = './blog';
+
+if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir);
+
+const files = fs.readdirSync(postsDir, { encoding: 'utf8' }).filter(f => f.endsWith('.md'));
+
+files.forEach(file => {
+  let content = fs.readFileSync(path.join(postsDir, file), 'utf8');
+  content = content.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+
+  const match = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+  if (!match) return;
+
+  const frontmatter = match[1];
+  const body = match[2].trim();
+
+  const get = (key) => {
+    const m = frontmatter.match(new RegExp(`^${key}:(.+)$`, 'm'));
+    return m ? m[1].trim().replace(/^["']|["']$/g, '') : '';
+  };
+
+  const title = get('title');
+  const date = get('date');
+  const tag = get('tag');
+  const excerpt = get('excerpt');
+  const slug = file.replace('.md', '');
+
+  let bodyHtml = body
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+    .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+    .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+    .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+    .replace(/^\d+\. (.*)$/gm, '<li>$1</li>')
+    .replace(/^- (.*)$/gm, '<li>$1</li>')
+    .split('\n\n')
+    .map(p => p.trim())
+    .filter(p => p)
+    .map(p => p.startsWith('<') ? p : `<p>${p}</p>`)
+    .join('\n');
+
+  const html = `<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>5 cosas que tenés que saber antes de comprar una piscina | Del Sol Piscinas Posadas</title>
-<meta name="description" content="Espacio disponible, tipo de suelo, presupuesto total y más. Leé esto antes de decidirte en Posadas.">
-<meta name="keywords" content="Consejos piscinas Posadas, piscinas Misiones, Del Sol Piscinas">
-<link rel="canonical" href="https://delsolpiscinas.com.ar/blog/5-cosas-antes-comprar-piscina.html">
+<title>${title} | Del Sol Piscinas Posadas</title>
+<meta name="description" content="${excerpt}">
+<meta name="keywords" content="${tag} piscinas Posadas, piscinas Misiones, Del Sol Piscinas">
+<link rel="canonical" href="https://delsolpiscinas.com.ar/blog/${slug}.html">
 <meta name="robots" content="index, follow">
 <meta name="geo.region" content="AR-N">
 <meta name="geo.placename" content="Posadas, Misiones, Argentina">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://delsolpiscinas.com.ar/blog/5-cosas-antes-comprar-piscina.html">
-<meta property="og:title" content="5 cosas que tenés que saber antes de comprar una piscina | Del Sol Piscinas">
-<meta property="og:description" content="Espacio disponible, tipo de suelo, presupuesto total y más. Leé esto antes de decidirte en Posadas.">
+<meta property="og:url" content="https://delsolpiscinas.com.ar/blog/${slug}.html">
+<meta property="og:title" content="${title} | Del Sol Piscinas">
+<meta property="og:description" content="${excerpt}">
 <meta property="og:image" content="https://delsolpiscinas.com.ar/img/delsol_logo_playa.jpeg">
 <meta property="og:locale" content="es_AR">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "5 cosas que tenés que saber antes de comprar una piscina",
-  "description": "Espacio disponible, tipo de suelo, presupuesto total y más. Leé esto antes de decidirte en Posadas.",
-  "datePublished": "2026-03-05",
+  "headline": "${title}",
+  "description": "${excerpt}",
+  "datePublished": "${date}",
   "author": {
     "@type": "Organization",
     "name": "Del Sol Piscinas y Accesorios"
@@ -34,7 +79,7 @@
   },
   "image": "https://delsolpiscinas.com.ar/img/delsol_logo_playa.jpeg"
 }
-</script>
+<\/script>
 <link rel="icon" type="image/jpeg" href="../img/delsol_logo_turquesa.jpeg">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css">
@@ -70,19 +115,14 @@
     <div class="breadcrumb">
       <a href="../index.html">Inicio</a> <span>›</span>
       <a href="../index.html#blog">Blog</a> <span>›</span>
-      <span>5 cosas que tenés que saber antes de comprar una piscina</span>
+      <span>${title}</span>
     </div>
-    <p class="blog-tag">Consejos</p>
-    <h1>5 cosas que tenés que saber antes de comprar una piscina</h1>
-    <p class="articulo-intro">Espacio disponible, tipo de suelo, presupuesto total y más. Leé esto antes de decidirte en Posadas.</p>
+    <p class="blog-tag">${tag}</p>
+    <h1>${title}</h1>
+    <p class="articulo-intro">${excerpt}</p>
   </div>
   <div class="articulo-body">
-    <p>Con más de 10 años instalando piscinas en Misiones, estos son los errores más comunes que vemos.</p>
-<li>Medí el espacio. Dejá al menos 1 metro libre alrededor de la piscina para circular y hacer mantenimiento.</li>
-<li>Revisá el tipo de suelo. Mucha pendiente o terrenos con rellenos pueden encarecer la obra. Hacemos visita técnica gratuita antes de cotizar.</li>
-<li>Calculá el presupuesto total. El precio de la piscina es solo el comienzo. Sumá instalación, bomba, filtro, escalera y mantenimiento mensual.</li>
-<li>Pensá en el tamaño real. Más grande no siempre es mejor. Una piscina muy grande en un patio pequeño se ve desproporcionada y cuesta más mantener.</li>
-<li>Elegí experiencia local. El clima de Misiones tiene sus particularidades. Llevamos más de 10 años trabajando en la zona.</li>
+    ${bodyHtml}
     <div class="articulo-cta">
       <p>¿Tenés alguna consulta sobre piscinas en Posadas?</p>
       <a href="https://wa.me/543765385003" target="_blank" class="btn-primary">Consultanos por WhatsApp</a>
@@ -102,4 +142,10 @@
 </a>
 <script src="../js/main.js"></script>
 </body>
-</html>
+</html>`;
+
+  fs.writeFileSync(path.join(outputDir, `${slug}.html`), html);
+  console.log(`✅ Generado: blog/${slug}.html`);
+});
+
+console.log(`\n✅ ${files.length} artículos procesados`);

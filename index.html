@@ -378,7 +378,7 @@ function renderCard(post) {
       <div class="blog-body">
         <p class="blog-tag">${post.tag}</p>
         <h3><a href="blog/${post.slug}.html">${post.title}</a></h3>
-        <p>${post.excerpt}</p>
+        <p>${marked.parse(post.excerpt)}</p>
         <a href="blog/${post.slug}.html" class="blog-read">Leer más <span class="arrow">→</span></a>
       </div>
     </article>

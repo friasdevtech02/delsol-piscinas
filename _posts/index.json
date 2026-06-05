@@ -7,5 +7,32 @@
     "excerpt": "El tamaño de tu piscina depende del espacio disponible, la cantidad de",
     "image": "",
     "emoji": ""
+  },
+  {
+    "slug": "5-cosas-antes-comprar-piscina",
+    "title": "5 cosas que tenés que saber antes de comprar una piscina",
+    "date": "2026-03-05",
+    "tag": "Consejos",
+    "excerpt": "Espacio disponible, tipo de suelo, presupuesto total y más. Leé esto antes de decidirte en Posadas.",
+    "image": "",
+    "emoji": "✅"
+  },
+  {
+    "slug": "mejor-momento-instalar-piscina",
+    "title": "¿Cuál es el mejor momento para instalar una piscina?",
+    "date": "2026-02-10",
+    "tag": "Instalación",
+    "excerpt": "Primavera y otoño son las estaciones ideales. Te explicamos por qué y cómo planificar tu proyecto en Misiones.",
+    "image": "",
+    "emoji": "🏗️"
+  },
+  {
+    "slug": "agua-cristalina-verano",
+    "title": "Cómo mantener el agua cristalina en verano",
+    "date": "2026-01-15",
+    "tag": "Mantenimiento",
+    "excerpt": "El calor misionero exige más atención al pH y la cloración. Estos son nuestros consejos clave para esta temporada.",
+    "image": "",
+    "emoji": "💧"
   }
 ]
