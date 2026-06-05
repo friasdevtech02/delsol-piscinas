@@ -17,6 +17,10 @@ collections:
       - { label: "Título", name: "title", widget: "string" }
       - { label: "Fecha", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
       - { label: "Categoría", name: "tag", widget: "select", options: ["Mantenimiento", "Instalación", "Consejos", "Novedades"] }
-      - { label: "Imagen destacada", name: "image", widget: "image", required: false, hint: "Foto que aparece como miniatura. Si no subís ninguna se muestra un ícono." }
+      - { label: "Imagen destacada", name: "image", widget: "image", required: false, hint: "Foto que aparece como miniatura. Si no subís ninguna usá el campo emoji." }
+      - { label: "Emoji (si no subís foto)", name: "emoji", widget: "string", required: false, hint: "Ejemplo: 🔧🏊 — se muestra si no hay imagen." }
       - { label: "Resumen", name: "excerpt", widget: "text", hint: "1 o 2 oraciones que se ven en la grilla del blog." }
-      - { label: "Contenido", name: "body", widget: "markdown" }
+      - label: "Contenido"
+        name: "body"
+        widget: "markdown"
+        modes: ["rich_text"]
