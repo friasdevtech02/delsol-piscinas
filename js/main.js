@@ -23,6 +23,25 @@ if (slides.length > 0) {
   if (prevBtn) prevBtn.addEventListener('click', () => { goTo(current - 1); resetAuto(); });
   dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); resetAuto(); }));
   startAuto();
+
+  // Swipe táctil para celular
+  const sliderEl = document.querySelector('.galeria');
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  sliderEl.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  sliderEl.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) { goTo(current + 1); }
+      else { goTo(current - 1); }
+      resetAuto();
+    }
+  }, { passive: true });
 }
 
 // Nav scroll
