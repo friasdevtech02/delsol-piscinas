@@ -24,21 +24,18 @@ if (slides.length > 0) {
   dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); resetAuto(); }));
   startAuto();
 
-  // Swipe táctil para celular
-  const sliderEl = document.querySelector('.galeria');
+// Swipe táctil para celular
+  const sliderEl = document.querySelector('.svc-slides');
   let touchStartX = 0;
-  let touchEndX = 0;
 
   sliderEl.addEventListener('touchstart', e => {
-    touchStartX = e.changedTouches[0].screenX;
+    touchStartX = e.touches[0].clientX;
   }, { passive: true });
 
   sliderEl.addEventListener('touchend', e => {
-    touchEndX = e.changedTouches[0].screenX;
-    const diff = touchStartX - touchEndX;
-    if (Math.abs(diff) > 50) {
-      if (diff > 0) { goTo(current + 1); }
-      else { goTo(current - 1); }
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) {
+      diff > 0 ? goTo(current + 1) : goTo(current - 1);
       resetAuto();
     }
   }, { passive: true });
